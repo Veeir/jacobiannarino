@@ -27,12 +27,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
-  width: 50%;
-}
-
-.name {
-  font-size: 3rem;
+  align-items: flex-start;
+  /* width: 50%; */
 }
 
 .description {
@@ -44,4 +40,51 @@ body {
   color: #41ff00;
   border: 1px solid #41ff00;
   border-radius: 5px;
+}
+
+.name {
+  font-size: 3rem;
+}
+
+.typing {
+  position: relative;
+}
+
+.description.typing::after {
+  -webkit-animation: typing 1.5s steps(15) forwards, caret 1s infinite;
+  animation: typing 1.5s steps(15) forwards, caret 1s infinite;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+.typing::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  width: 100%;
+  color: black;
+  background: black;
+  -webkit-animation: typing 1.5s steps(15) forwards, caret 1s 3;
+  animation: typing 1.5s steps(15) forwards, caret 1s 3;
+}
+
+@-webkit-keyframes typing {
+  to {
+    width: 0;
+  }
+}
+
+@keyframes typing {
+  to {
+    width: 0;
+  }
+}
+@-webkit-keyframes caret {
+  50% {
+    color: #41ff00;
+  }
+}
+@keyframes caret {
+  50% {
+    color: #41ff00;
+  }
 }
