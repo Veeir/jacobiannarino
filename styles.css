@@ -8,10 +8,15 @@
   font-style: normal;
 }
 
+* {
+  font-size: 16px;
+}
+
 body {
   font-family: clacon;
   background-color: black;
   color: #41ff00;
+  overflow: hidden;
 }
 
 .wrapper {
@@ -28,18 +33,20 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  /* width: 50%; */
 }
 
 .description {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
-.button {
-  font-size: 1.5rem;
+.link {
+  font-size: 2rem;
+  cursor: pointer;
+  text-decoration: none;
   color: #41ff00;
-  border: 1px solid #41ff00;
-  border-radius: 5px;
+}
+.link:hover {
+  text-decoration: underline;
 }
 
 .name {
@@ -48,13 +55,33 @@ body {
 
 .typing {
   position: relative;
+  padding: 10px auto;
 }
 
 .description.typing::after {
-  -webkit-animation: typing 1.5s steps(15) forwards, caret 1s infinite;
-  animation: typing 1.5s steps(15) forwards, caret 1s infinite;
+  -webkit-animation: typing 1s steps(13) forwards, caret 1s 1;
+  animation: typing 1s steps(13) forwards, caret 1s 1;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.about.typing::after {
+  -webkit-animation: typing 1s steps(8) forwards, caret 1s 1;
+  animation: typing 1s steps(8) forwards, caret 1s 1;
   -webkit-animation-delay: 3s;
   animation-delay: 3s;
+}
+.links.typing::after {
+  -webkit-animation: typing 1s steps(5) forwards, caret 1s 1;
+  animation: typing 1s steps(5) forwards, caret 1s 1;
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+}
+.contact-me.typing::after {
+  -webkit-animation: typing 1s steps(10) forwards, caret 1s infinite;
+  animation: typing 1s steps(10) forwards, caret 1s infinite;
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
 }
 .typing::after {
   content: "|";
@@ -63,8 +90,8 @@ body {
   width: 100%;
   color: black;
   background: black;
-  -webkit-animation: typing 1.5s steps(15) forwards, caret 1s 3;
-  animation: typing 1.5s steps(15) forwards, caret 1s 3;
+  -webkit-animation: typing 1s steps(15) forwards, caret 1s 2;
+  animation: typing 1s steps(15) forwards, caret 1s 2;
 }
 
 @-webkit-keyframes typing {
@@ -86,5 +113,43 @@ body {
 @keyframes caret {
   50% {
     color: #41ff00;
+  }
+}
+
+.header {
+  font-size: 32px;
+}
+
+.sub-header {
+  font-size: 24px;
+}
+
+.content {
+  font-size: 16px;
+}
+
+.header {
+  font-size: 64px;
+}
+
+.sub-header {
+  font-size: 48px;
+}
+
+.content {
+  font-size: 32px;
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    font-size: 64px;
+  }
+
+  .sub-header {
+    font-size: 48px;
+  }
+
+  .content {
+    font-size: 32px;
   }
 }
